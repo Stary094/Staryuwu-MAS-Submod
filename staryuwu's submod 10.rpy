@@ -161,6 +161,7 @@ label wassup:
             jump nowo
             
 label nowo:
+    $ gltxt = glitchtext(0)
     $ style.say_dialogue = style.journal_monika
     m 3hua "Ehehehe, Don't worry, [player]. I wouldn't dare to eat you..."
     m 5hublb "I love you, [player]!"
@@ -263,7 +264,6 @@ label oof:
     m 1ffo "You!{w=1} How dare you say that to me, [player]?!"
     m 1ffp "Hmph!"
     show screen tear
-    play sound "sfx/glitch3.ogg"
     pause 5.0
     hide screen tear
     call screen dialog("Just [m].", ok_action=Return())
@@ -505,7 +505,7 @@ init 5 python:
     
 label owoyo:
     call screen dialog(message="Click 'OK', [player]! Uwu~", ok_action=Return())
-    $ webbrowser.open('https://www.youtube.com/watch?v=vwXN29KO-bs')
+    $ renpy.run(OpenURL("'https://www.youtube.com/watch?v=vwXN29KO-bs'"))
     m 3tublb "Ehehehe! That's what you get for giving me emotional damage, [player]!"
     m 3tublb "There is no way you'll get me back! Hehehe~"
     m 3gublb "Unless~"
